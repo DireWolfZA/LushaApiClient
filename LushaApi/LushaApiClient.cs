@@ -1,10 +1,12 @@
 using System.Text.Json;
+using LushaApi.Actions;
 using RestSharp;
 using RestSharp.Serializers.Json;
 
 namespace LushaApi;
 
 public interface ILushaApiClient {
+    IContactActions Contacts { get; }
 }
 
 public class LushaApiClient : ILushaApiClient {
@@ -18,4 +20,6 @@ public class LushaApiClient : ILushaApiClient {
         client.AddDefaultHeader("Accept", "application/json");
         client.AddDefaultHeader("api_key", apikey);
     }
+
+    public IContactActions Contacts => new ContactActions(client);
 }

@@ -7,6 +7,7 @@ namespace LushaApi;
 
 public interface ILushaApiClient {
     IContactActions Contacts { get; }
+    ICompanyActions Companies { get; }
 }
 
 public class LushaApiClient : ILushaApiClient {
@@ -22,4 +23,5 @@ public class LushaApiClient : ILushaApiClient {
     }
 
     public IContactActions Contacts => new ContactActions(client);
+    public ICompanyActions Companies => new CompanyActions(client);
 }

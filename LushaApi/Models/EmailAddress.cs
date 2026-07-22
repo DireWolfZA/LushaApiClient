@@ -16,13 +16,6 @@ public class EmailAddress {
         Unknown = 3
     }
 
-    public EmailAddress(string? email = null, TypeEnum? type = null, string? confidence = null, DateTimeOffset? updateDate = null) {
-        this.Email = email;
-        this.Type = type;
-        this.Confidence = confidence;
-        this.UpdateDate = updateDate;
-    }
-
     [JsonPropertyName("email")]
     public string? Email { get; set; }
     [JsonPropertyName("type")]

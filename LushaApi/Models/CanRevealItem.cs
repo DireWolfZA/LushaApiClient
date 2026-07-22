@@ -16,12 +16,6 @@ public class CanRevealItem {
         Phones = 2
     }
 
-    /// <param name="credits">Credit cost (0 when already revealed for this account).</param>
-    public CanRevealItem(FieldEnum? field = null, int? credits = null) {
-        this.Field = field;
-        this.Credits = credits;
-    }
-
     [JsonPropertyName("field")]
     public FieldEnum? Field { get; set; }
     /// <summary>

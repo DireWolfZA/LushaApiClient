@@ -5,14 +5,6 @@ namespace LushaApi.Models;
 
 [DataContract(Name = "V3CompanyPreview_location")]
 public class CompanyPreviewLocation {
-    public CompanyPreviewLocation(string? city = null, string? state = null, string? country = null, string? countryISO2 = null, string? continent = null) {
-        this.City = city;
-        this.State = state;
-        this.Country = country;
-        this.CountryISO2 = countryISO2;
-        this.Continent = continent;
-    }
-
     [JsonPropertyName("city")]
     public string? City { get; set; }
     [JsonPropertyName("state")]

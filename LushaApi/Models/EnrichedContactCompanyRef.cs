@@ -5,13 +5,6 @@ namespace LushaApi.Models;
 
 [DataContract(Name = "V3EnrichedContactCompanyRef")]
 public class EnrichedContactCompanyRef {
-    public EnrichedContactCompanyRef(string? id = null, string? name = null, string? domain = null, string? industry = null) {
-        this.ID = id;
-        this.Name = name;
-        this.Domain = domain;
-        this.Industry = industry;
-    }
-
     [JsonPropertyName("id")]
     public string? ID { get; set; }
     [JsonPropertyName("name")]

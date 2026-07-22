@@ -57,14 +57,8 @@ public class CompanySignals {
         ProductActivityNews = 23
     }
 
-    public CompanySignals(List<TypesEnum> types, DateTimeOffset? startDate = null, int? maxResultsPerSignal = null) {
-        this.Types = types ?? throw new ArgumentNullException("types is a required property for V3CompanySignalsDto and cannot be null");
-        this.StartDate = startDate;
-        this.MaxResultsPerSignal = maxResultsPerSignal;
-    }
-
     [JsonPropertyName("types")]
-    public List<TypesEnum> Types { get; set; }
+    public required List<TypesEnum> Types { get; set; }
     /// <summary>
     /// Should be <see cref="DateOnly"/>, but netstandard2.0 doesn't include it
     /// </summary>

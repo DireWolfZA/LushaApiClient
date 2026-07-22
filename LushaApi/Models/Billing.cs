@@ -9,16 +9,6 @@ namespace LushaApi.Models;
 [DataContract(Name = "V3Billing")]
 public class Billing {
     /// <summary>
-    /// Initializes a new instance of the <see cref="Billing" /> class.
-    /// </summary>
-    /// <param name="creditsCharged">Total credits charged for this request.</param>
-    /// <param name="resultsReturned">Number of successful results returned.</param>
-    public Billing(int? creditsCharged = null, int? resultsReturned = null) {
-        this.CreditsCharged = creditsCharged;
-        this.ResultsReturned = resultsReturned;
-    }
-
-    /// <summary>
     /// Total credits charged for this request
     /// </summary>
     [JsonPropertyName("creditsCharged")]

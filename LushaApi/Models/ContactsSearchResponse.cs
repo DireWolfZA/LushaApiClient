@@ -7,12 +7,6 @@ namespace LushaApi.Models;
 
 [DataContract(Name = "V3ContactsSearchResponse")]
 public class ContactsSearchResponse {
-    public ContactsSearchResponse(Guid? requestID = null, List<ContactPreview>? results = null, Billing? billing = null) {
-        this.RequestID = requestID;
-        this.Results = results;
-        this.Billing = billing;
-    }
-
     [JsonPropertyName("requestId")]
     public Guid? RequestID { get; set; }
     [JsonPropertyName("results")]

@@ -7,29 +7,6 @@ namespace LushaApi.Models;
 
 [DataContract(Name = "V3EnrichedContact")]
 public class EnrichedContact {
-    public EnrichedContact(
-        string? id = null, string? firstName = null, string? lastName = null, string? fullName = null,
-        ContactPreviewJobTitle? jobTitle = null, EnrichedContactLocation? location = null, List<ContactTag>? tags = null,
-        List<EmailAddress>? emails = null, List<PhoneNumber>? phones = null, EnrichedContactCompanyRef? company = null,
-        EnrichedContactSocialLinks? socialLinks = null, List<EnrichedContactPreviousEmploymentInner>? previousEmployment = null,
-        DateTimeOffset? updateDate = null, ItemError? error = null
-    ) {
-        this.ID = id;
-        this.FirstName = firstName;
-        this.LastName = lastName;
-        this.FullName = fullName;
-        this.JobTitle = jobTitle;
-        this.Location = location;
-        this.Tags = tags;
-        this.Emails = emails;
-        this.Phones = phones;
-        this.Company = company;
-        this.SocialLinks = socialLinks;
-        this.PreviousEmployment = previousEmployment;
-        this.UpdateDate = updateDate;
-        this.Error = error;
-    }
-
     [JsonPropertyName("id")]
     public string? ID { get; set; }
     [JsonPropertyName("firstName")]

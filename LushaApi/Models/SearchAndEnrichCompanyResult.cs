@@ -6,54 +6,6 @@ namespace LushaApi.Models;
 
 [DataContract(Name = "V3SearchAndEnrichCompanyResult")]
 public class SearchAndEnrichCompanyResult {
-    /// <param name="employeesByDepartment">Breakdown of employees by department. Revealed via &#x60;reveal: [&quot;employeesByDepartment&quot;]&#x60; in Enrich Companies.</param>
-    /// <param name="employeesByLocation">Breakdown of employees by country and state. Revealed via &#x60;reveal: [&quot;employeesByLocation&quot;]&#x60; in Enrich Companies.</param>
-    /// <param name="employeesBySeniority">Breakdown of employees by seniority level. Revealed via &#x60;reveal: [&quot;employeesBySeniority&quot;]&#x60; in Enrich Companies.</param>
-    /// <param name="competitors">List of competitor companies. Revealed via &#x60;reveal: [&quot;competitors&quot;]&#x60; in Enrich Companies. Use Enrich Companies with the returned IDs to get full firmographic data on each competitor.</param>
-    /// <param name="businessModel">Company business model classification (e.g. B2B, B2C).</param>
-    /// <param name="phone">Company phone number.</param>
-    /// <param name="email">Company contact email address.</param>
-    /// <param name="keywords">Keywords associated with the company (normalized from specialities and description).</param>
-    /// <param name="specialitiesRefactored">Normalized version of the specialities list.</param>
-    public SearchAndEnrichCompanyResult(string? id = null, string? name = null, string? alternativeName = null, string? domain = null, List<string>? alternativeDomains = null, string? description = null, string? companyType = null, decimal? yearFounded = null, CompanyPreviewEmployeeCount? employeeCount = null, string? industry = null, string? subIndustry = null, List<string>? specialities = null, List<string>? industryTags = null, List<SICCode>? sicCodes = null, List<NAICSCode>? naicsCodes = null, CompanyLocation? location = null, List<CompanyLocation>? additionalLocations = null, CompanyPreviewSocialLinks? socialLinks = null, decimal? linkedinFollowers = null, EnrichedCompanyRevenueRange? revenueRange = null, object? funding = null, object? intent = null, List<string>? technologies = null, decimal? popularityTier = null, string? logoURL = null, List<EnrichedCompanyEmployeesByDepartmentInner>? employeesByDepartment = null, List<EnrichedCompanyEmployeesByLocationInner>? employeesByLocation = null, List<EnrichedCompanyEmployeesBySeniorityInner>? employeesBySeniority = null, List<EnrichedCompanyCompetitorsInner>? competitors = null, List<string>? businessModel = null, string? phone = null, string? email = null, List<string>? keywords = null, List<string>? specialitiesRefactored = null, ItemError? error = null, string? clientReferenceID = null) {
-        this.ID = id;
-        this.Name = name;
-        this.AlternativeName = alternativeName;
-        this.Domain = domain;
-        this.AlternativeDomains = alternativeDomains;
-        this.Description = description;
-        this.CompanyType = companyType;
-        this.YearFounded = yearFounded;
-        this.EmployeeCount = employeeCount;
-        this.Industry = industry;
-        this.SubIndustry = subIndustry;
-        this.Specialities = specialities;
-        this.IndustryTags = industryTags;
-        this.SICCodes = sicCodes;
-        this.NAICSCodes = naicsCodes;
-        this.Location = location;
-        this.AdditionalLocations = additionalLocations;
-        this.SocialLinks = socialLinks;
-        this.LinkedInFollowers = linkedinFollowers;
-        this.RevenueRange = revenueRange;
-        this.Funding = funding;
-        this.Intent = intent;
-        this.Technologies = technologies;
-        this.PopularityTier = popularityTier;
-        this.LogoURL = logoURL;
-        this.EmployeesByDepartment = employeesByDepartment;
-        this.EmployeesByLocation = employeesByLocation;
-        this.EmployeesBySeniority = employeesBySeniority;
-        this.Competitors = competitors;
-        this.BusinessModel = businessModel;
-        this.Phone = phone;
-        this.Email = email;
-        this.Keywords = keywords;
-        this.SpecialitiesRefactored = specialitiesRefactored;
-        this.Error = error;
-        this.ClientReferenceID = clientReferenceID;
-    }
-
     [JsonPropertyName("id")]
     public string? ID { get; set; }
     [JsonPropertyName("name")]

@@ -5,16 +5,6 @@ namespace LushaApi.Models;
 
 [DataContract(Name = "V3CompanyLocation")]
 public class CompanyLocation {
-    /// <param name="zipCode">Postal/ZIP code (present on HQ location when available).</param>
-    public CompanyLocation(string? city = null, string? state = null, string? country = null, string? countryISO2 = null, string? continent = null, string? zipCode = null) {
-        this.City = city;
-        this.State = state;
-        this.Country = country;
-        this.CountryISO2 = countryISO2;
-        this.Continent = continent;
-        this.ZipCode = zipCode;
-    }
-
     [JsonPropertyName("city")]
     public string? City { get; set; }
     [JsonPropertyName("state")]

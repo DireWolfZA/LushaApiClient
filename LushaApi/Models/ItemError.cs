@@ -18,11 +18,6 @@ public class ItemError {
         EnrichFailed = 3
     }
 
-    public ItemError(CodeEnum? code = null, string? message = null) {
-        this.Code = code;
-        this.Message = message;
-    }
-
     [JsonPropertyName("code")]
     public CodeEnum? Code { get; set; }
     [JsonPropertyName("message")]

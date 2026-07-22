@@ -18,13 +18,6 @@ public class PhoneNumber {
         Unknown = 4
     }
 
-    public PhoneNumber(string? number = null, TypeEnum? type = null, bool? doNotCall = null, DateTimeOffset? updateDate = null) {
-        this.Number = number;
-        this.Type = type;
-        this.DoNotCall = doNotCall;
-        this.UpdateDate = updateDate;
-    }
-
     [JsonPropertyName("number")]
     public string? Number { get; set; }
     [JsonPropertyName("type")]

@@ -5,17 +5,6 @@ namespace LushaApi.Models;
 
 [DataContract(Name = "V3ContactSearchItem")]
 public class ContactSearchItem {
-    public ContactSearchItem(string? clientReferenceID = null, string? id = null, string? linkedinURL = null, string? email = null, string? firstName = null, string? lastName = null, string? companyName = null, string? companyDomain = null) {
-        this.ClientReferenceID = clientReferenceID;
-        this.ID = id;
-        this.LinkedInURL = linkedinURL;
-        this.Email = email;
-        this.FirstName = firstName;
-        this.LastName = lastName;
-        this.CompanyName = companyName;
-        this.CompanyDomain = companyDomain;
-    }
-
     [JsonPropertyName("clientReferenceId")]
     public string? ClientReferenceID { get; set; }
     [JsonPropertyName("id")]

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
@@ -15,14 +14,8 @@ public class ContactsSearchAndEnrichRequest {
         Phones = 2
     }
 
-    public ContactsSearchAndEnrichRequest(List<ContactSearchItem> contacts, List<RevealEnum>? reveal = null, SearchOptions? options = null) {
-        this.Contacts = contacts ?? throw new ArgumentNullException("contacts is a required property for V3ContactsSearchAndEnrichRequest and cannot be null");
-        this.Reveal = reveal;
-        this.Options = options;
-    }
-
     [JsonPropertyName("contacts")]
-    public List<ContactSearchItem> Contacts { get; set; }
+    public required List<ContactSearchItem> Contacts { get; set; }
     [JsonPropertyName("reveal")]
     public List<RevealEnum>? Reveal { get; set; }
     [JsonPropertyName("options")]

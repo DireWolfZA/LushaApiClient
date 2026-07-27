@@ -8,9 +8,9 @@ namespace LushaApi.Models;
 public class ContactsSearchAndEnrichRequest {
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum RevealEnum {
-        [EnumMember(Value = "emails")]
+        [JsonStringEnumMemberName("emails")]
         Emails = 1,
-        [EnumMember(Value = "phones")]
+        [JsonStringEnumMemberName("phones")]
         Phones = 2
     }
 

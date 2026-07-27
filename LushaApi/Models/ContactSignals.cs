@@ -9,11 +9,11 @@ namespace LushaApi.Models;
 public class ContactSignals {
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum TypesEnum {
-        [EnumMember(Value = "allSignals")]
+        [JsonStringEnumMemberName("allSignals")]
         AllSignals = 1,
-        [EnumMember(Value = "promotion")]
+        [JsonStringEnumMemberName("promotion")]
         Promotion = 2,
-        [EnumMember(Value = "companyChange")]
+        [JsonStringEnumMemberName("companyChange")]
         CompanyChange = 3
     }
 

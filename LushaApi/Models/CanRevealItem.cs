@@ -10,9 +10,9 @@ namespace LushaApi.Models;
 public class CanRevealItem {
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum FieldEnum {
-        [EnumMember(Value = "emails")]
+        [JsonStringEnumMemberName("emails")]
         Emails = 1,
-        [EnumMember(Value = "phones")]
+        [JsonStringEnumMemberName("phones")]
         Phones = 2
     }
 

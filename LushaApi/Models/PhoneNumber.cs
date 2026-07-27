@@ -8,13 +8,13 @@ namespace LushaApi.Models;
 public class PhoneNumber {
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum TypeEnum {
-        [EnumMember(Value = "mobile")]
+        [JsonStringEnumMemberName("mobile")]
         Mobile = 1,
-        [EnumMember(Value = "direct")]
+        [JsonStringEnumMemberName("direct")]
         Direct = 2,
-        [EnumMember(Value = "work")]
+        [JsonStringEnumMemberName("work")]
         Work = 3,
-        [EnumMember(Value = "unknown")]
+        [JsonStringEnumMemberName("unknown")]
         Unknown = 4
     }
 

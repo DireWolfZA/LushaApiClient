@@ -11,4 +11,6 @@ public class ContactPreviewCompany {
     public string? Name { get; set; }
     [JsonPropertyName("domain")]
     public string? Domain { get; set; }
+    [JsonPropertyName("industry")]
+    public string? Industry { get; set; }
 }

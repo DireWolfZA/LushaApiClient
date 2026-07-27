@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
@@ -9,15 +8,15 @@ namespace LushaApi.Models;
 public class CompaniesEnrichRequest {
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum RevealEnum {
-        [EnumMember(Value = "employeesByDepartment")]
+        [JsonStringEnumMemberName("employeesByDepartment")]
         EmployeesByDepartment = 1,
-        [EnumMember(Value = "employeesByLocation")]
+        [JsonStringEnumMemberName("employeesByLocation")]
         EmployeesByLocation = 2,
-        [EnumMember(Value = "employeesBySeniority")]
+        [JsonStringEnumMemberName("employeesBySeniority")]
         EmployeesBySeniority = 3,
-        [EnumMember(Value = "competitors")]
+        [JsonStringEnumMemberName("competitors")]
         Competitors = 4,
-        [EnumMember(Value = "intent")]
+        [JsonStringEnumMemberName("intent")]
         Intent = 5
     }
 
@@ -28,11 +27,11 @@ public class CompaniesEnrichRequest {
     public required List<string> IDs { get; set; }
     /// <summary>
     /// Additional data fields to reveal. Each field is charged separately per result.
-    /// <br />- &#x60;employeesByDepartment&#x60; — breakdown of employees by department
-    /// <br />- &#x60;employeesByLocation&#x60; — breakdown of employees by country/state
-    /// <br />- &#x60;employeesBySeniority&#x60; — breakdown of employees by seniority level
-    /// <br />- &#x60;competitors&#x60; — list of competitor company IDs
-    /// <br />- &#x60;intent&#x60; — buyer intent topics
+    /// <br />- <see cref="RevealEnum.EmployeesByDepartment"/> — breakdown of employees by department
+    /// <br />- <see cref="RevealEnum.EmployeesByLocation"/> — breakdown of employees by country/state
+    /// <br />- <see cref="RevealEnum.EmployeesBySeniority"/> — breakdown of employees by seniority level
+    /// <br />- <see cref="RevealEnum.Competitors"/> — list of competitor company IDs
+    /// <br />- <see cref="RevealEnum.Intent"/> — buyer intent topics
     /// <br />Example: [&quot;employeesByDepartment&quot;,&quot;employeesByLocation&quot;,&quot;employeesBySeniority&quot;,&quot;competitors&quot;,&quot;intent&quot;]
     /// </summary>
     [JsonPropertyName("reveal")]

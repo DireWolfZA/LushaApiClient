@@ -9,51 +9,51 @@ namespace LushaApi.Models;
 public class CompanySignals {
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum TypesEnum {
-        [EnumMember(Value = "allSignals")]
+        [JsonStringEnumMemberName("allSignals")]
         AllSignals = 1,
-        [EnumMember(Value = "websiteTrafficDecrease")]
+        [JsonStringEnumMemberName("websiteTrafficDecrease")]
         WebsiteTrafficDecrease = 2,
-        [EnumMember(Value = "websiteTrafficIncrease")]
+        [JsonStringEnumMemberName("websiteTrafficIncrease")]
         WebsiteTrafficIncrease = 3,
-        [EnumMember(Value = "itSpendIncrease")]
+        [JsonStringEnumMemberName("itSpendIncrease")]
         ITSpendIncrease = 4,
-        [EnumMember(Value = "itSpendDecrease")]
+        [JsonStringEnumMemberName("itSpendDecrease")]
         ITSpendDecrease = 5,
-        [EnumMember(Value = "surgeInHiring")]
+        [JsonStringEnumMemberName("surgeInHiring")]
         SurgeInHiring = 6,
-        [EnumMember(Value = "headcountIncrease1m")]
+        [JsonStringEnumMemberName("headcountIncrease1m")]
         HeadcountIncrease1M = 7,
-        [EnumMember(Value = "headcountIncrease3m")]
+        [JsonStringEnumMemberName("headcountIncrease3m")]
         HeadcountIncrease3M = 8,
-        [EnumMember(Value = "headcountIncrease6m")]
+        [JsonStringEnumMemberName("headcountIncrease6m")]
         HeadcountIncrease6M = 9,
-        [EnumMember(Value = "headcountIncrease12m")]
+        [JsonStringEnumMemberName("headcountIncrease12m")]
         HeadcountIncrease12M = 10,
-        [EnumMember(Value = "headcountDecrease1m")]
+        [JsonStringEnumMemberName("headcountDecrease1m")]
         HeadcountDecrease1M = 11,
-        [EnumMember(Value = "headcountDecrease3m")]
+        [JsonStringEnumMemberName("headcountDecrease3m")]
         HeadcountDecrease3M = 12,
-        [EnumMember(Value = "headcountDecrease6m")]
+        [JsonStringEnumMemberName("headcountDecrease6m")]
         HeadcountDecrease6M = 13,
-        [EnumMember(Value = "headcountDecrease12m")]
+        [JsonStringEnumMemberName("headcountDecrease12m")]
         HeadcountDecrease12M = 14,
-        [EnumMember(Value = "surgeInHiringByDepartment")]
+        [JsonStringEnumMemberName("surgeInHiringByDepartment")]
         SurgeInHiringByDepartment = 15,
-        [EnumMember(Value = "surgeInHiringByLocation")]
+        [JsonStringEnumMemberName("surgeInHiringByLocation")]
         SurgeInHiringByLocation = 16,
-        [EnumMember(Value = "riskNews")]
+        [JsonStringEnumMemberName("riskNews")]
         RiskNews = 17,
-        [EnumMember(Value = "commercialActivityNews")]
+        [JsonStringEnumMemberName("commercialActivityNews")]
         CommercialActivityNews = 18,
-        [EnumMember(Value = "corporateStrategyNews")]
+        [JsonStringEnumMemberName("corporateStrategyNews")]
         CorporateStrategyNews = 19,
-        [EnumMember(Value = "financialEventsNews")]
+        [JsonStringEnumMemberName("financialEventsNews")]
         FinancialEventsNews = 20,
-        [EnumMember(Value = "peopleNews")]
+        [JsonStringEnumMemberName("peopleNews")]
         PeopleNews = 21,
-        [EnumMember(Value = "marketIntelligenceNews")]
+        [JsonStringEnumMemberName("marketIntelligenceNews")]
         MarketIntelligenceNews = 22,
-        [EnumMember(Value = "productActivityNews")]
+        [JsonStringEnumMemberName("productActivityNews")]
         ProductActivityNews = 23
     }
 

@@ -10,11 +10,11 @@ namespace LushaApi.Models;
 public class ItemError {
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum CodeEnum {
-        [EnumMember(Value = "NOT_FOUND")]
+        [JsonStringEnumMemberName("NOT_FOUND")]
         NotFound = 1,
-        [EnumMember(Value = "COMPLIANCE_RESTRICTED")]
+        [JsonStringEnumMemberName("COMPLIANCE_RESTRICTED")]
         ComplianceRestricted = 2,
-        [EnumMember(Value = "ENRICH_FAILED")]
+        [JsonStringEnumMemberName("ENRICH_FAILED")]
         EnrichFailed = 3
     }
 

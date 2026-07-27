@@ -8,16 +8,16 @@ namespace LushaApi.Models;
 public class CompanyProspectingFilters {
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum TechnologiesConditionEnum {
-        [EnumMember(Value = "or")]
+        [JsonStringEnumMemberName("or")]
         Or = 1,
-        [EnumMember(Value = "and")]
+        [JsonStringEnumMemberName("and")]
         And = 2
     }
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum IntentTopicsConditionEnum {
-        [EnumMember(Value = "or")]
+        [JsonStringEnumMemberName("or")]
         Or = 1,
-        [EnumMember(Value = "and")]
+        [JsonStringEnumMemberName("and")]
         And = 2
     }
 

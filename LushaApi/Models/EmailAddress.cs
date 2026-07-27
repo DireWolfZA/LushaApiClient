@@ -8,11 +8,11 @@ namespace LushaApi.Models;
 public class EmailAddress {
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum TypeEnum {
-        [EnumMember(Value = "work")]
+        [JsonStringEnumMemberName("work")]
         Work = 1,
-        [EnumMember(Value = "private")]
+        [JsonStringEnumMemberName("private")]
         Private = 2,
-        [EnumMember(Value = "unknown")]
+        [JsonStringEnumMemberName("unknown")]
         Unknown = 3
     }
 

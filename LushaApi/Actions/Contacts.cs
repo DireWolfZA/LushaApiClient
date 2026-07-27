@@ -9,6 +9,7 @@ public interface IContactActions {
     Task<ContactsSearchResponse> Search(ContactsSearchRequest searchParams);
     Task<ContactsEnrichResponse> Enrich(ContactsEnrichRequest searchParams);
     Task<ContactsSearchAndEnrichResponse> SearchAndEnrich(ContactsSearchAndEnrichRequest searchParams);
+    Task<ProspectingContactsResponse> Prospect(ProspectingContactsRequest searchParams);
 }
 
 public class ContactActions : IContactActions {
@@ -39,5 +40,13 @@ public class ContactActions : IContactActions {
             .AddJsonBody(searchParams);
 
         return RestResponseHandler.Handle(await client.ExecuteAsync<ContactsSearchAndEnrichResponse>(request, Method.Post));
+    }
+
+    //https://docs.lusha.com/apis/openapi/prospecting/prospectingcontacts
+    public async Task<ProspectingContactsResponse> Prospect(ProspectingContactsRequest searchParams) {
+        var request = new RestRequest("contacts/prospecting", Method.Post)
+            .AddJsonBody(searchParams);
+
+        return RestResponseHandler.Handle(await client.ExecuteAsync<ProspectingContactsResponse>(request, Method.Post));
     }
 }

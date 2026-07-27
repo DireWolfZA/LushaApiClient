@@ -9,6 +9,7 @@ public interface ICompanyActions {
     Task<CompaniesSearchResponse> Search(CompaniesSearchRequest searchParams);
     Task<CompaniesEnrichResponse> Enrich(CompaniesEnrichRequest searchParams);
     Task<CompaniesSearchAndEnrichResponse> SearchAndEnrich(CompaniesSearchAndEnrichRequest searchParams);
+    Task<ProspectingCompaniesResponse> Prospect(ProspectingCompaniesRequest searchParams);
 }
 
 public class CompanyActions : ICompanyActions {
@@ -39,5 +40,13 @@ public class CompanyActions : ICompanyActions {
             .AddJsonBody(searchParams);
 
         return RestResponseHandler.Handle(await client.ExecuteAsync<CompaniesSearchAndEnrichResponse>(request, Method.Post));
+    }
+
+    //https://docs.lusha.com/apis/openapi/prospecting/prospectingcompanies
+    public async Task<ProspectingCompaniesResponse> Prospect(ProspectingCompaniesRequest searchParams) {
+        var request = new RestRequest("companies/prospecting", Method.Post)
+            .AddJsonBody(searchParams);
+
+        return RestResponseHandler.Handle(await client.ExecuteAsync<ProspectingCompaniesResponse>(request, Method.Post));
     }
 }

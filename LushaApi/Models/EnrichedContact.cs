@@ -31,11 +31,8 @@ public class EnrichedContact {
     public EnrichedContactSocialLinks? SocialLinks { get; set; }
     [JsonPropertyName("previousEmployment")]
     public List<EnrichedContactPreviousEmploymentInner>? PreviousEmployment { get; set; }
-    /// <summary>
-    /// Should be <see cref="DateOnly"/>, but netstandard2.0 doesn't include it
-    /// </summary>
     [JsonPropertyName("updateDate")]
-    public DateTimeOffset? UpdateDate { get; set; }
+    public DateOnly? UpdateDate { get; set; }
     [JsonPropertyName("error")]
     public ItemError? Error { get; set; }
 }

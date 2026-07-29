@@ -24,9 +24,6 @@ public class PhoneNumber {
     public TypeEnum? Type { get; set; }
     [JsonPropertyName("doNotCall")]
     public bool? DoNotCall { get; set; }
-    /// <summary>
-    /// Should be <see cref="DateOnly"/>, but netstandard2.0 doesn't include it
-    /// </summary>
     [JsonPropertyName("updateDate")]
-    public DateTimeOffset? UpdateDate { get; set; }
+    public DateOnly? UpdateDate { get; set; }
 }

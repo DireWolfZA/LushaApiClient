@@ -10,9 +10,6 @@ public class CompanyProspectingFiltersSignalsFilterByLocationInner {
     public string? Country { get; set; }
     [JsonPropertyName("state")]
     public string? State { get; set; }
-    /// <summary>
-    /// Should be <see cref="DateOnly"/>, but netstandard2.0 doesn't include it
-    /// </summary>
     [JsonPropertyName("startDate")]
-    public DateTime? StartDate { get; set; }
+    public DateOnly? StartDate { get; set; }
 }

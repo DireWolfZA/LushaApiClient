@@ -20,5 +20,5 @@ public class ContactFilterCriteriaSignals {
     [JsonPropertyName("types")]
     public List<TypesEnum>? Types { get; set; }
     [JsonPropertyName("startDate")]
-    public DateTime? StartDate { get; set; }
+    public DateOnly? StartDate { get; set; }
 }

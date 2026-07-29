@@ -17,7 +17,9 @@ public class LushaApiClient : ILushaApiClient {
     public LushaApiClient([System.Diagnostics.CodeAnalysis.AllowNull] string apikey) {
         Utils.Utils.RequireStringArgument(apikey);
 
-        client = new RestClient("https://api.lusha.com/v3/", configureSerialization: config => config.UseSystemTextJson(new JsonSerializerOptions(JsonSerializerDefaults.Web)));
+        client = new RestClient("https://api.lusha.com/v3/", configureSerialization: config => config.UseSystemTextJson(new JsonSerializerOptions(JsonSerializerDefaults.Web) {
+            Converters = { new DateOnlyConverter() },
+        }));
 
         client.AddDefaultHeader("Accept", "application/json");
         client.AddDefaultHeader("api_key", apikey);

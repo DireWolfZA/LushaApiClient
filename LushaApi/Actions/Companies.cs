@@ -10,6 +10,7 @@ public interface ICompanyActions {
     Task<CompaniesEnrichResponse> Enrich(CompaniesEnrichRequest searchParams);
     Task<CompaniesSearchAndEnrichResponse> SearchAndEnrich(CompaniesSearchAndEnrichRequest searchParams);
     Task<ProspectingCompaniesResponse> Prospect(ProspectingCompaniesRequest searchParams);
+    Task<CompanyLookalikesResponse> Lookalikes(CompanyLookalikesRequest searchParams);
 }
 
 public class CompanyActions : ICompanyActions {
@@ -48,5 +49,13 @@ public class CompanyActions : ICompanyActions {
             .AddJsonBody(searchParams);
 
         return RestResponseHandler.Handle(await client.ExecuteAsync<ProspectingCompaniesResponse>(request, Method.Post));
+    }
+
+    //https://docs.lusha.com/apis/openapi/lookalikes/getcompanylookalikes
+    public async Task<CompanyLookalikesResponse> Lookalikes(CompanyLookalikesRequest searchParams) {
+        var request = new RestRequest("companies/lookalike", Method.Post)
+            .AddJsonBody(searchParams);
+
+        return RestResponseHandler.Handle(await client.ExecuteAsync<CompanyLookalikesResponse>(request, Method.Post));
     }
 }

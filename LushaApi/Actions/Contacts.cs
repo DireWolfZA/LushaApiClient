@@ -10,6 +10,7 @@ public interface IContactActions {
     Task<ContactsEnrichResponse> Enrich(ContactsEnrichRequest searchParams);
     Task<ContactsSearchAndEnrichResponse> SearchAndEnrich(ContactsSearchAndEnrichRequest searchParams);
     Task<ProspectingContactsResponse> Prospect(ProspectingContactsRequest searchParams);
+    Task<ContactLookalikesResponse> Lookalikes(ContactLookalikesRequest searchParams);
 }
 
 public class ContactActions : IContactActions {
@@ -48,5 +49,13 @@ public class ContactActions : IContactActions {
             .AddJsonBody(searchParams);
 
         return RestResponseHandler.Handle(await client.ExecuteAsync<ProspectingContactsResponse>(request, Method.Post));
+    }
+
+    //https://docs.lusha.com/apis/openapi/lookalikes/getcontactlookalikes
+    public async Task<ContactLookalikesResponse> Lookalikes(ContactLookalikesRequest searchParams) {
+        var request = new RestRequest("contacts/lookalike", Method.Post)
+            .AddJsonBody(searchParams);
+
+        return RestResponseHandler.Handle(await client.ExecuteAsync<ContactLookalikesResponse>(request, Method.Post));
     }
 }

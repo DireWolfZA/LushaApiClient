@@ -24,6 +24,10 @@ public class PhoneNumber {
     public TypeEnum? Type { get; set; }
     [JsonPropertyName("doNotCall")]
     public bool? DoNotCall { get; set; }
+    [JsonPropertyName("countryIso2")]
+    public string? CountryISO2 { get; set; }
     [JsonPropertyName("updateDate")]
     public DateOnly? UpdateDate { get; set; }
+    [JsonPropertyName("dataSource")]
+    public string? DataSource { get; set; }
 }

@@ -29,6 +29,8 @@ public class EnrichedContact {
     public EnrichedContactCompanyRef? Company { get; set; }
     [JsonPropertyName("socialLinks")]
     public EnrichedContactSocialLinks? SocialLinks { get; set; }
+    [JsonPropertyName("partialProfile")]
+    public bool? PartialProfile { get; set; }
     [JsonPropertyName("previousEmployment")]
     public List<EnrichedContactPreviousEmploymentInner>? PreviousEmployment { get; set; }
     [JsonPropertyName("updateDate")]

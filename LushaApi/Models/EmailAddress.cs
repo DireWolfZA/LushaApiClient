@@ -24,4 +24,6 @@ public class EmailAddress {
     public string? Confidence { get; set; }
     [JsonPropertyName("updateDate")]
     public DateOnly? UpdateDate { get; set; }
+    [JsonPropertyName("dataSource")]
+    public string? DataSource { get; set; }
 }

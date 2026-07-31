@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
@@ -12,4 +13,6 @@ public class ContactPreviewJobTitle {
     public List<string>? Departments { get; set; }
     [JsonPropertyName("seniority")]
     public string? Seniority { get; set; }
+    [JsonPropertyName("startDate")]
+    public DateOnly? StartDate { get; set; }
 }

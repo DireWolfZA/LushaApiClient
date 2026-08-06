@@ -14,10 +14,11 @@ public class AccountActions : IAccountActions {
     public AccountActions(RestClient client) {
         this.client = client;
     }
+    private const string baseURL = "v3/account";
 
     //https://docs.lusha.com/apis/openapi/account/getaccountusage
     public async Task<AccountUsageResponse> GetUsage() {
-        var request = new RestRequest("account/usage", Method.Get);
+        var request = new RestRequest($"{baseURL}/usage", Method.Get);
 
         return RestResponseHandler.Handle(await client.ExecuteAsync<AccountUsageResponse>(request, Method.Get));
     }

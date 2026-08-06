@@ -19,10 +19,11 @@ public class ContactActions : IContactActions {
     public ContactActions(RestClient client) {
         this.client = client;
     }
+    private const string baseURL = "v3/contacts";
 
     //https://docs.lusha.com/apis/openapi/search/searchcontacts
     public async Task<ContactsSearchResponse> Search(ContactsSearchRequest searchParams) {
-        var request = new RestRequest("contacts/search", Method.Post)
+        var request = new RestRequest($"{baseURL}/search", Method.Post)
             .AddJsonBody(searchParams);
 
         return RestResponseHandler.Handle(await client.ExecuteAsync<ContactsSearchResponse>(request, Method.Post));
@@ -30,7 +31,7 @@ public class ContactActions : IContactActions {
 
     //https://docs.lusha.com/apis/openapi/enrich/enrichcontacts
     public async Task<ContactsEnrichResponse> Enrich(ContactsEnrichRequest searchParams) {
-        var request = new RestRequest("contacts/enrich", Method.Post)
+        var request = new RestRequest($"{baseURL}/enrich", Method.Post)
             .AddJsonBody(searchParams);
 
         return RestResponseHandler.Handle(await client.ExecuteAsync<ContactsEnrichResponse>(request, Method.Post));
@@ -38,7 +39,7 @@ public class ContactActions : IContactActions {
 
     //https://docs.lusha.com/apis/openapi/search-and-enrich/searchandenrichcontacts
     public async Task<ContactsSearchAndEnrichResponse> SearchAndEnrich(ContactsSearchAndEnrichRequest searchParams) {
-        var request = new RestRequest("contacts/search-and-enrich", Method.Post)
+        var request = new RestRequest($"{baseURL}/search-and-enrich", Method.Post)
             .AddJsonBody(searchParams);
 
         return RestResponseHandler.Handle(await client.ExecuteAsync<ContactsSearchAndEnrichResponse>(request, Method.Post));
@@ -46,7 +47,7 @@ public class ContactActions : IContactActions {
 
     //https://docs.lusha.com/apis/openapi/prospecting/prospectingcontacts
     public async Task<ProspectingContactsResponse> Prospect(ProspectingContactsRequest searchParams) {
-        var request = new RestRequest("contacts/prospecting", Method.Post)
+        var request = new RestRequest($"{baseURL}/prospecting", Method.Post)
             .AddJsonBody(searchParams);
 
         return RestResponseHandler.Handle(await client.ExecuteAsync<ProspectingContactsResponse>(request, Method.Post));
@@ -54,7 +55,7 @@ public class ContactActions : IContactActions {
 
     //https://docs.lusha.com/apis/openapi/lookalikes/getcontactlookalikes
     public async Task<ContactLookalikesResponse> Lookalikes(ContactLookalikesRequest searchParams) {
-        var request = new RestRequest("contacts/lookalike", Method.Post)
+        var request = new RestRequest($"{baseURL}/lookalike", Method.Post)
             .AddJsonBody(searchParams);
 
         return RestResponseHandler.Handle(await client.ExecuteAsync<ContactLookalikesResponse>(request, Method.Post));
@@ -62,7 +63,7 @@ public class ContactActions : IContactActions {
 
     //https://docs.lusha.com/apis/openapi/signals/getcontactsignals
     public async Task<ContactSignalsResponse> Signals(ContactSignalsRequest searchParams) {
-        var request = new RestRequest("contacts/signals", Method.Post)
+        var request = new RestRequest($"{baseURL}/signals", Method.Post)
             .AddJsonBody(searchParams);
 
         return RestResponseHandler.Handle(await client.ExecuteAsync<ContactSignalsResponse>(request, Method.Post));

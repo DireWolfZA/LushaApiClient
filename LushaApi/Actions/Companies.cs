@@ -12,6 +12,7 @@ public interface ICompanyActions {
     Task<ProspectingCompaniesResponse> Prospect(ProspectingCompaniesRequest searchParams);
     Task<CompanyLookalikesResponse> Lookalikes(CompanyLookalikesRequest searchParams);
     Task<CompanySignalsResponse> Signals(CompanySignalsRequest searchParams);
+    Task<CompanySignalTypesResponse> GetSignalTypes();
 }
 
 public class CompanyActions : ICompanyActions {
@@ -67,5 +68,12 @@ public class CompanyActions : ICompanyActions {
             .AddJsonBody(searchParams);
 
         return RestResponseHandler.Handle(await client.ExecuteAsync<CompanySignalsResponse>(request, Method.Post));
+    }
+
+    //https://docs.lusha.com/apis/openapi/signals/getcompanysignaltypes
+    public async Task<CompanySignalTypesResponse> GetSignalTypes() {
+        var request = new RestRequest($"{baseURL}/signals/types", Method.Get);
+
+        return RestResponseHandler.Handle(await client.ExecuteAsync<CompanySignalTypesResponse>(request, Method.Get));
     }
 }

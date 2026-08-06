@@ -11,7 +11,8 @@ public interface IContactActions {
     Task<ContactsSearchAndEnrichResponse> SearchAndEnrich(ContactsSearchAndEnrichRequest searchParams);
     Task<ProspectingContactsResponse> Prospect(ProspectingContactsRequest searchParams);
     Task<ContactLookalikesResponse> Lookalikes(ContactLookalikesRequest searchParams);
-    Task<ContactSignalsResponse> Signals(ContactSignalsRequest searchParams);
+    Task<ContactSignalsResponse> Signals(ContactSignalsRequest requestParams);
+    Task<ContactSignalTypesResponse> GetSignalTypes();
 }
 
 public class ContactActions : IContactActions {
@@ -62,10 +63,17 @@ public class ContactActions : IContactActions {
     }
 
     //https://docs.lusha.com/apis/openapi/signals/getcontactsignals
-    public async Task<ContactSignalsResponse> Signals(ContactSignalsRequest searchParams) {
+    public async Task<ContactSignalsResponse> Signals(ContactSignalsRequest requestParams) {
         var request = new RestRequest($"{baseURL}/signals", Method.Post)
-            .AddJsonBody(searchParams);
+            .AddJsonBody(requestParams);
 
         return RestResponseHandler.Handle(await client.ExecuteAsync<ContactSignalsResponse>(request, Method.Post));
+    }
+
+    //https://docs.lusha.com/apis/openapi/signals/getcontactsignaltypes
+    public async Task<ContactSignalTypesResponse> GetSignalTypes() {
+        var request = new RestRequest($"{baseURL}/signals/types", Method.Get);
+
+        return RestResponseHandler.Handle(await client.ExecuteAsync<ContactSignalTypesResponse>(request, Method.Get));
     }
 }

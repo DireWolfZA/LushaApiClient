@@ -63,22 +63,22 @@ public class EnrichedCompany {
     [JsonPropertyName("logoUrl")]
     public string? LogoUrl { get; set; }
     /// <summary>
-    /// Breakdown of employees by department. Revealed via &#x60;reveal: [&quot;employeesByDepartment&quot;]&#x60; in Enrich Companies.
+    /// Breakdown of employees by department. Revealed via `reveal: [&quot;employeesByDepartment&quot;]` in Enrich Companies.
     /// </summary>
     [JsonPropertyName("employeesByDepartment")]
     public List<EnrichedCompanyEmployeesByDepartmentInner>? EmployeesByDepartment { get; set; }
     /// <summary>
-    /// Breakdown of employees by country and state. Revealed via &#x60;reveal: [&quot;employeesByLocation&quot;]&#x60; in Enrich Companies.
+    /// Breakdown of employees by country and state. Revealed via `reveal: [&quot;employeesByLocation&quot;]` in Enrich Companies.
     /// </summary>
     [JsonPropertyName("employeesByLocation")]
     public List<EnrichedCompanyEmployeesByLocationInner>? EmployeesByLocation { get; set; }
     /// <summary>
-    /// Breakdown of employees by seniority level. Revealed via &#x60;reveal: [&quot;employeesBySeniority&quot;]&#x60; in Enrich Companies. 
+    /// Breakdown of employees by seniority level. Revealed via `reveal: [&quot;employeesBySeniority&quot;]` in Enrich Companies. 
     /// </summary>
     [JsonPropertyName("employeesBySeniority")]
     public List<EnrichedCompanyEmployeesBySeniorityInner>? EmployeesBySeniority { get; set; }
     /// <summary>
-    /// List of competitor companies. Revealed via &#x60;reveal: [&quot;competitors&quot;]&#x60; in Enrich Companies. Use Enrich Companies with the returned IDs to get full firmographic data on each competitor. 
+    /// List of competitor companies. Revealed via `reveal: [&quot;competitors&quot;]` in Enrich Companies. Use Enrich Companies with the returned IDs to get full firmographic data on each competitor. 
     /// </summary>
     [JsonPropertyName("competitors")]
     public List<EnrichedCompanyCompetitorsInner>? Competitors { get; set; }

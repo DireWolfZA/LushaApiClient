@@ -13,6 +13,7 @@ public interface IContactActions {
     Task<ContactLookalikesResponse> Lookalikes(ContactLookalikesRequest searchParams);
     Task<ContactSignalsResponse> Signals(ContactSignalsRequest requestParams);
     Task<ContactSignalTypesResponse> GetSignalTypes();
+    Task<DecisionMakersResponse> GetDecisionMakers(DecisionMakersRequest requestParams);
 }
 
 public class ContactActions : IContactActions {
@@ -75,5 +76,13 @@ public class ContactActions : IContactActions {
         var request = new RestRequest($"{baseURL}/signals/types", Method.Get);
 
         return RestResponseHandler.Handle(await client.ExecuteAsync<ContactSignalTypesResponse>(request, Method.Get));
+    }
+
+    //https://docs.lusha.com/apis/openapi/decision-makers/getdecisionmakers
+    public async Task<DecisionMakersResponse> GetDecisionMakers(DecisionMakersRequest requestParams) {
+        var request = new RestRequest($"{baseURL}/decision-makers", Method.Post)
+            .AddJsonBody(requestParams);
+
+        return RestResponseHandler.Handle(await client.ExecuteAsync<DecisionMakersResponse>(request, Method.Get));
     }
 }

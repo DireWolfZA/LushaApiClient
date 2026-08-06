@@ -11,8 +11,9 @@ public interface ICompanyActions {
     Task<CompaniesSearchAndEnrichResponse> SearchAndEnrich(CompaniesSearchAndEnrichRequest searchParams);
     Task<ProspectingCompaniesResponse> Prospect(ProspectingCompaniesRequest searchParams);
     Task<CompanyLookalikesResponse> Lookalikes(CompanyLookalikesRequest searchParams);
-    Task<CompanySignalsResponse> Signals(CompanySignalsRequest searchParams);
+    Task<CompanySignalsResponse> Signals(CompanySignalsRequest requestParams);
     Task<CompanySignalTypesResponse> GetSignalTypes();
+    Task<FilterTypesDiscoveryResponse> GetSignalFilters();
 }
 
 public class CompanyActions : ICompanyActions {
@@ -63,9 +64,9 @@ public class CompanyActions : ICompanyActions {
     }
 
     //https://docs.lusha.com/apis/openapi/signals/getcompanysignals
-    public async Task<CompanySignalsResponse> Signals(CompanySignalsRequest searchParams) {
+    public async Task<CompanySignalsResponse> Signals(CompanySignalsRequest requestParams) {
         var request = new RestRequest($"{baseURL}/signals", Method.Post)
-            .AddJsonBody(searchParams);
+            .AddJsonBody(requestParams);
 
         return RestResponseHandler.Handle(await client.ExecuteAsync<CompanySignalsResponse>(request, Method.Post));
     }
@@ -75,5 +76,12 @@ public class CompanyActions : ICompanyActions {
         var request = new RestRequest($"{baseURL}/signals/types", Method.Get);
 
         return RestResponseHandler.Handle(await client.ExecuteAsync<CompanySignalTypesResponse>(request, Method.Get));
+    }
+
+    //https://docs.lusha.com/apis/openapi/signals/getcompanysignalfilters
+    public async Task<FilterTypesDiscoveryResponse> GetSignalFilters() {
+        var request = new RestRequest($"{baseURL}/signals/filters", Method.Get);
+
+        return RestResponseHandler.Handle(await client.ExecuteAsync<FilterTypesDiscoveryResponse>(request, Method.Get));
     }
 }

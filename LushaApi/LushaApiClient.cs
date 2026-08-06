@@ -9,6 +9,7 @@ public interface ILushaApiClient {
     IContactActions Contacts { get; }
     ICompanyActions Companies { get; }
     IAccountActions Account { get; }
+    IWebhookActions Webhooks { get; }
 }
 
 public class LushaApiClient : ILushaApiClient {
@@ -28,4 +29,5 @@ public class LushaApiClient : ILushaApiClient {
     public IContactActions Contacts => new ContactActions(client);
     public ICompanyActions Companies => new CompanyActions(client);
     public IAccountActions Account => new AccountActions(client);
+    public IWebhookActions Webhooks => new WebhookActions(client);
 }

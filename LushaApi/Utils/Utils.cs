@@ -23,4 +23,14 @@ internal class Utils {
         if (argument == null) // satisfy warning
             throw new ArgumentNullException(paramName);
     }
+
+    public static string? EncodeEnumParameter<TEnum>(TEnum? enumValue) where TEnum : struct, Enum {
+        string? value = System.Text.Json.JsonSerializer.Serialize(enumValue);
+        if (value == "null") {
+            value = null;
+        } else {
+            value = value.Trim().Trim('"').Trim();
+        }
+        return value;
+    }
 }
